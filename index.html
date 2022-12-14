@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        /* font-family: Arial,Helvetica,sans-serif; */
+        font-family:Futura-Medium,Century Gothic,Gill Sans,Helvetica,Arial,sans-serif;
+    }
+    .header-container{
+        margin-top: 10px;
+        display: flex;
+        /* border: 1px solid red; */
+        justify-content: space-between;
+        align-items: center;
+       padding: 6px 30px 10px 30px;
+    }
+    .right-head{
+        /* border: 1px solid red; */
+        display: flex;
+        align-items: center;
+        width: 43%;
+        font-weight: bold;
+        font-size: 11px;
+        text-decoration: none;
+        color: #757575;
+        font-family: Arial,Helvetica,sans-serif;
+    }
+    .right-head a{
+        text-decoration: none;
+        color:rgb(110, 110, 110); 
+    }
+    .left-head{
+        width: 21%;
+        display: flex;
+        padding-bottom: 15px;
+        /* border: 1px solid red; */
+    }
+    .left-head a,.right-head p,.right-head>a{
+        margin: auto;
+    }
+    .left-head a{
+        text-decoration: none;
+        color: rgb(29, 29, 29);
+        font-size: 13px;
+    }
+    .parent{
+        display: flex;
+       justify-content: center;
+       /* border: 1px solid red; */
+       margin-top: 40px;
+    }
+    .logo{
+        width: 23%;
+        /* border: 1px solid red; */
+        margin-left: 450px;
+    }
+    .logo img{
+        width: 100%;
+    }
+    .bag{
+        display: flex;
+        align-items: flex-end;
+        /* border:1px solid red; */
+        margin-left: 300px;
+        padding-bottom: 5px;
+        padding-right:25px ;
+    }
+    .bag img{
+        width: 32px;
+        margin-left: 10px;
+    }
+    .bag a{
+        text-decoration: none;
+        color:rgb(29, 29, 29) ;
+        font-size:13px;
+    }
+    .navbar{
+        display: flex;
+        font-size: 13px;
+        /* border: 1px solid red; */
+        padding: 48px 25px 0px 25px;
+       justify-content: space-between;
+       align-content: center;
+    }
+    .options{
+        display: flex;
+       
+    }
+    .options a{
+        text-decoration: none;
+        color: #757575;
+        margin-left: 20px;
+    }
+    .wish:hover{
+        color:black
+    }
+    hr{
+        width: 100%;
+        border-top:1px solid rgb(226, 226, 226);
+        border-bottom: 0px;
+        
+    }
+    body{
+        margin: 0px;
+        padding: 0px;
+    }
+    .icon{
+        border: 1px solid  #cfcfcf; 
+        width: 230px;
+        padding: 5px;
+    }
+    .input{
+        padding-right: 25px;
+    }
+    .sale{
+        text-align: center;
+        font-size: 14px;
+        color:#ed0000!important;}
+    .banner1{
+        display: block;
+        margin: auto;
+    }
+    .banner1{
+        width: 93%;
+    }
+    .banner2>img{
+        width: 100%;
+        margin-top: 25px;
+    }
+    .banner1-div{
+       text-align: center;
+       margin-top: -200px;
+       color: #ffffff;
+    }
+    .btn1{
+        border: 0px;
+        padding:7px;
+        width: 120px;
+        background-color: #ffffff;
+    }
+    .btn1>a{
+        text-decoration: none;
+        color: #282828;
+        font-size: 12px;
+        
+    }
+    .darkbtn{
+        background-color: black;
+        
+    }
+    .darkbtn>a{
+        color: #ffffff;
+    }
+    .section{
+        width: 93%;
+        margin: auto;
+        text-align: center;
+        margin-top: 80px;
+        background-color: rgb(244, 244, 244);
+        border-top:1px solid rgb(226, 226, 226);
+        border-bottom: 1px solid rgb(226, 226, 226);
+        padding: 20px 0px;
+        line-height: 24px;
+    }
+    .h{
+        font-weight: lighter;
+    }
+    .h1{
+        font-size: medium;
+    }
+    .section2{
+        width: 93%;
+        display: flex;
+        margin: auto;
+        justify-content: space-between;
+        padding-top: 20px;
+    }
+    .section2>div{
+        width: 40%;
+        text-align: center;
+    }
+    .exclusive1{
+        width: 95%;
+        margin: auto;
+        display: flex;
+        padding-bottom: 50px;
+        border-bottom: 1px solid rgb(226, 226, 226);
+        
+    }
+    .exclusive1 img{
+        width: 96%;
+        display: block;
+        margin: auto;
+        padding-bottom: 50px;
+        padding-top: 20px;
+    }
+    .exclusive1 button {
+       display: block;
+       margin: auto;
+    }
+    .secondary,.f3{
+        border-bottom: 1px solid rgb(226, 226, 226);
+        padding-bottom: 20px;
+    }
+    .margin{
+        text-align: center;
+        padding-bottom: 25px;
+        padding-top: 10px;
+    }
+    .exclusive2{
+        text-align: center;
+    }
+    .gridelement{
+        width: 93%;
+        display: flex;
+        /* border: 1px solid red; */
+        margin: auto;
+        justify-content: space-between;
+        /* padding-bottom: 50px; */
+    }
+    .gridelement>div{
+        width: 23%;
+        text-align: center;
+    }
+    .gridelement>div img{
+        width: 100%;
+    }
+    .gridelement+button{
+        display: block;
+        margin: auto;
+    }
+    .gridparent{
+        padding-bottom: 50px;
+        border-bottom: 1px solid rgb(226, 226, 226);
+    }
+    .f1,.f2{
+        width: 80%;
+        margin: auto;
+        padding-top: 15px;
+    }
+    .h1{
+        font-weight: lighter;
+        font-size: 15px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    .p{
+        font-size: 12px;
+        line-height: 16px;
+        font-family: Arial,Helvetica,sans-serif;
+        text-align: left;
+    }
+    .f2{
+        display: flex;
+    }
+    .right{
+       text-align: justify;
+    }
+    .playstore{
+        margin: auto;
+        border-bottom: 1px solid rgb(226, 226, 226);
+        padding: 10px;
+    }
+    .playstore>div{
+        display: flex;
+        /* border:1px solid red; */
+        width: 20%;
+        margin: auto;
+        padding:10px;
+
+    }
+    .playstore>div>div{
+        width: 48%;
+        margin: auto;
+    }
+    .playstore>div img{
+        width: 100%;
+    }
+    .last-foot{
+        display: flex;
+    }
+</style>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="left-head">
+                <a href="#">WOMEN</a>
+                <a href="#">MEN</a>
+                <a href="#">KIDS</a>
+                <a href="#">LIFE</a>
+            </div>
+            <div class="right-head">
+                <p class="wish">Welcome to Mytheresa</p>
+                <a href="#" class="wish">My account</a>
+                <a href="#" class="wish" >My wishlist</span></a>
+                <p class="wish">International | English</p>
+            </div>
+        </div>
+        <div class="parent">
+            <div class="logo">
+                <img src="./Data for TB/logo.png" alt="">
+            </div>
+            <div class="bag">
+                <a href="#">SHOPPING BAG</a>
+                <img src="./Data for TB/bag.svg" alt="">
+            </div>
+        </div>
+    </header>
+    <section class="nav">
+        <nav class="navbar">
+            <div class="options">
+                <a href="#">NEW ARRIVALS</a>
+                <a href="#">DESGNERS</a>
+                <a href="#">CLOTHING</a>
+                <a href="#">SHOES</a>
+                <a href="#">BAGS</a>
+                <a href="#">ACCESSORIES</a>
+                <a href="#">JEWELARY</a>
+                <a href="#">FESTIVE SEASON</a>
+                <a href="#" class="sale">SALE</a>
+            </div>
+            <div class="input">
+                <input type="text" class="icon" placeholder="Search for...">
+            </div>
+        </nav>
+        <hr>
+        <div>
+            <p class="sale">
+                2 days left: Extra 10% off selected sale
+            </p>
+        </div>
+    </section> 
+    <img class="banner1" src="./Data for TB/banner 1.webp" alt="">
+    <div class="banner1 banner2">
+        <img src="./Data for TB/banner 2.0.jpg" alt="">
+    </div>
+    <div class="banner1-div">
+        <p>YOUR NEW OUTLOOK</p>
+        <h1>Cruise 2023</h1>    
+        <div class="button-wrapper">
+        <button class="btn1"><a href="#">SHOP NOW </a></button>
+    </div>
+    </div>
+    <div class="section">
+        <h4 class="h">DON'T MISS OUT</h4>
+        <h1 class="h">New Arrivals</h1>
+        <h5 class="h h1">Christian Louboutin, Paris Texas, A.P.C., Victoria Beckham...</h5>
+        <button class="btn1 darkbtn"><a href="#">SHOP NOW </a></button>
+    </div>
+    <div class="section2">
+        <div>
+            <h4 class="h h1">PARIS TEXAS X MYTHERESA</h4>
+            <h1 class="h">The Exclusive Capslie Collection</h1>
+        </div>
+        <div>
+            <h4 class="h h1">SEASONAL FLATS</h4>
+            <h1 class="h">Because cozy feet are happy feet</h1>
+        </div>
+    </div>
+    <div class="exclusive1">
+        <div>
+            <!-- image div -->
+            <img src="./Data for TB/section1 img1.jpg" alt="">
+            <button class="btn1 darkbtn"><a href="#">SHOP NOW </a></button>
+        </div>
+        <div>
+            <div class="secondary">
+                <img src="./Data for TB/section1 img 2.jpg" alt="">
+                <button class="btn1 darkbtn"><a href="#">SHOP NOW </a></button>
+            </div>
+            <div class="margin">
+                <h4 class="h h1">CONTEMPORARY JEWELRY</h4>
+                <h1 class="h">Craft and style rolled into one</h1>
+            </div>
+            <div>
+                <img src="./Data for TB/section1 img 3.jpg" alt="">
+                <button class="btn1 darkbtn"><a href="#">SHOP NOW </a></button>
+            </div>
+        </div>
+    </div>
+    <div class="section2">
+        <div>
+            <h4 class="h h1">WHAT'S THE ANGLE?</h4>
+            <h1 class="h">Sharpen your edit of winter-sun shades</h1>
+        </div>
+        <div>
+            <h4 class="h h1">GLAMOROUS GOWNS</h4>
+            <h1 class="h">Designed to make a statement</h1>
+        </div>
+    </div>
+    <div class="exclusive1">
+       
+        <div>
+            <div class="secondary">
+                <img src="./Data for TB/section2 img 1.jpg" alt="">
+                <button class="btn1 darkbtn"><a href="#">SHOP NOW </a></button>
+            </div>
+            <div class="margin">
+                <h4 class="h h1">YOUR NEW FLEX</h4>
+                <h1 class="h">The Antigona Stretch Bag from Givenchy</h1>
+            </div>
+            <div>
+                <img src="./Data for TB/section 2 img 2.jpg" alt="">
+                <button class="btn1 darkbtn"><a href="#">SHOP NOW </a></button>
+            </div>
+        </div>
+        <div>
+            <!-- image div -->
+            <img src="./Data for TB/section 2 img 3.jpg" alt="">
+            <button class="btn1 darkbtn"><a href="#">SHOP NOW </a></button>
+        </div>
+    </div>
+    <div class="exclusive2">
+        <h4 class="h h1">PREP SCHOOL</h4>
+        <h1 class="h">Where polished is the guiding principle</h1>
+    </div>
+    <div class="gridparent">
+        <div class="gridelement">
+            <div>
+                <img src="./Data for TB/section3 img 1.jpg" alt="">
+                <h4 class="h h1">Self-Potrait</h4>
+            </div>
+            <div>
+                <img src="./Data for TB/section3 img2.jpg" alt="">
+                <h4 class="h h1">Gucci</h4>
+            </div>
+            <div>
+                <img src="./Data for TB/section3 img3.jpg" alt="">
+                <h4 class="h h1">Valentino</h4>
+            </div>
+            <div>
+                <img src="./Data for TB/section3 img4.webp" alt="">
+                <h4 class="h h1">Oscar de la Renta</h4>
+            </div>
+        </div>
+        <button class="btn1 darkbtn"><a href="#">SHOP NOW </a></button>
+    </div>
+    <footer>
+        <div class="footer-passage">
+            <div class="f1">
+                <h1 class="h1">MYTHERESA - Women's luxury and designer fashion</h1>
+                <p class="p">
+                    Mytheresa is the most-trusted source for finding the finest selection of luxurious womenswear.
+                     Our expert buying team travels the globe with a simple mission: to bring international fashion's 
+                     finest directly to your doorstep. With our runway-fresh new arrivals every week, an easy-to-navigate
+                      platform and a mobile app to shop on-the-go, we ensure a boutique-like feeling for a unique shopping
+                       experience.
+                </p>
+            </div>
+            <div class="f2">
+                <div>
+                    <ul>
+                        <h1 class="h1 right">A LUXURY SHOPPING EXPERIENCE</h1>
+                        <li class="p">The finest edit of more than 200 international luxury brands</li>
+                        <li class="p">900 new arrivals each week directly from the runway</li>
+                        <li class="p">Well-curated selection of items for a boutique-like shopping experience</li>
+                        <li class="p">Exclusive designer collaborations and capslie collections that you won't find anywhere else</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <h1 class="h1 right">SERVICE AND QUALITY</h1>
+                        <li class="p">Authentic products guaranteed</li>
+                        <li class="p">Fast, reliable delivery within 3 business days</li>
+                        <li class="p">Free returns and exchanges within 30 days</li>
+                        <li class="p">Exceptional customer service available 24 hours a day, 7 days a week in 13 different languages</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="f1 f3">
+                <p class="p">Whether you are looking for the latest Bottega Veneta pouch for everyday wear, Jimmy Choo heels for an upcoming 
+                    wedding, or a Burberry scarf to gift a friend, our edit comprises the key pieces that you need for an elegant season ahead.
+                    With our assortment of timeless items and exclusive capsule collections, which includes everything from the understated luxury
+                    of Loro Piana and avant-garde appeal of Maison Margiela, to Saint Laurent bags and time-honored Gucci loafers; you are certain
+                    to find everything you want to build your dream closet.</p>
+                
+                <p class="p">
+                    Get inspired by our coveted edit, which makes occasion dressing easy by breaking down our buy into easy-to-shop categories
+                    such as fashion sneakers or exquisite gowns. Delve into our exclusive selection of designer must-haves. Our exceptional
+                    customer service team is here to help you through every step of the order process, and beyond, to make sure you start 
+                    every day dressed to conquer.
+                </p>
+                <p class="p">
+                    Shop with us and discover why Mytheresa is your final destination for online shopping for women.
+                </p>
+            </div>
+        </div>
+        <div class="playstore">
+            <h1 class="h1">SHOP WHENEVER, WHEREVER WITH THE APP</h1>
+            <div>
+                <div>
+                    <img src="./Data for TB/appstore.png" alt="">
+                </div>
+                <div>
+                    <img src="./Data for TB/playstore.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="last-foot">
+            <div>
+                <h1 class="h1">SERVICE & SECURITY</h1>
+            </div>
+            <div>
+                <h1 class="h1">MYTHERESA</h1>
+            </div>
+            <div>
+                <h1 class="h1">CUSTOMER CARE</h1>
+            </div>
+            <div>
+                <h1 class="h1">GET TREND UPDATES, STYLE TIPS AND MORE</h1>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
