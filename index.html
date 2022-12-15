@@ -4,287 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d4cc0930cc.js" crossorigin="anonymous"></script>
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<style>
-    *{
-        /* font-family: Arial,Helvetica,sans-serif; */
-        font-family:Futura-Medium,Century Gothic,Gill Sans,Helvetica,Arial,sans-serif;
-    }
-    .header-container{
-        margin-top: 10px;
-        display: flex;
-        /* border: 1px solid red; */
-        justify-content: space-between;
-        align-items: center;
-       padding: 6px 30px 10px 30px;
-    }
-    .right-head{
-        /* border: 1px solid red; */
-        display: flex;
-        align-items: center;
-        width: 43%;
-        font-weight: bold;
-        font-size: 11px;
-        text-decoration: none;
-        color: #757575;
-        font-family: Arial,Helvetica,sans-serif;
-    }
-    .right-head a{
-        text-decoration: none;
-        color:rgb(110, 110, 110); 
-    }
-    .left-head{
-        width: 21%;
-        display: flex;
-        padding-bottom: 15px;
-        /* border: 1px solid red; */
-    }
-    .left-head a,.right-head p,.right-head>a{
-        margin: auto;
-    }
-    .left-head a{
-        text-decoration: none;
-        color: rgb(29, 29, 29);
-        font-size: 13px;
-    }
-    .parent{
-        display: flex;
-       justify-content: center;
-       /* border: 1px solid red; */
-       margin-top: 40px;
-    }
-    .logo{
-        width: 23%;
-        /* border: 1px solid red; */
-        margin-left: 450px;
-    }
-    .logo img{
-        width: 100%;
-    }
-    .bag{
-        display: flex;
-        align-items: flex-end;
-        /* border:1px solid red; */
-        margin-left: 300px;
-        padding-bottom: 5px;
-        padding-right:25px ;
-    }
-    .bag img{
-        width: 32px;
-        margin-left: 10px;
-    }
-    .bag a{
-        text-decoration: none;
-        color:rgb(29, 29, 29) ;
-        font-size:13px;
-    }
-    .navbar{
-        display: flex;
-        font-size: 13px;
-        /* border: 1px solid red; */
-        padding: 48px 25px 0px 25px;
-       justify-content: space-between;
-       align-content: center;
-    }
-    .options{
-        display: flex;
-       
-    }
-    .options a{
-        text-decoration: none;
-        color: #757575;
-        margin-left: 20px;
-    }
-    .wish:hover{
-        color:black
-    }
-    hr{
-        width: 100%;
-        border-top:1px solid rgb(226, 226, 226);
-        border-bottom: 0px;
-        
-    }
-    body{
-        margin: 0px;
-        padding: 0px;
-    }
-    .icon{
-        border: 1px solid  #cfcfcf; 
-        width: 230px;
-        padding: 5px;
-    }
-    .input{
-        padding-right: 25px;
-    }
-    .sale{
-        text-align: center;
-        font-size: 14px;
-        color:#ed0000!important;}
-    .banner1{
-        display: block;
-        margin: auto;
-    }
-    .banner1{
-        width: 93%;
-    }
-    .banner2>img{
-        width: 100%;
-        margin-top: 25px;
-    }
-    .banner1-div{
-       text-align: center;
-       margin-top: -200px;
-       color: #ffffff;
-    }
-    .btn1{
-        border: 0px;
-        padding:7px;
-        width: 120px;
-        background-color: #ffffff;
-    }
-    .btn1>a{
-        text-decoration: none;
-        color: #282828;
-        font-size: 12px;
-        
-    }
-    .darkbtn{
-        background-color: black;
-        
-    }
-    .darkbtn>a{
-        color: #ffffff;
-    }
-    .section{
-        width: 93%;
-        margin: auto;
-        text-align: center;
-        margin-top: 80px;
-        background-color: rgb(244, 244, 244);
-        border-top:1px solid rgb(226, 226, 226);
-        border-bottom: 1px solid rgb(226, 226, 226);
-        padding: 20px 0px;
-        line-height: 24px;
-    }
-    .h{
-        font-weight: lighter;
-    }
-    .h1{
-        font-size: medium;
-    }
-    .section2{
-        width: 93%;
-        display: flex;
-        margin: auto;
-        justify-content: space-between;
-        padding-top: 20px;
-    }
-    .section2>div{
-        width: 40%;
-        text-align: center;
-    }
-    .exclusive1{
-        width: 95%;
-        margin: auto;
-        display: flex;
-        padding-bottom: 50px;
-        border-bottom: 1px solid rgb(226, 226, 226);
-        
-    }
-    .exclusive1 img{
-        width: 96%;
-        display: block;
-        margin: auto;
-        padding-bottom: 50px;
-        padding-top: 20px;
-    }
-    .exclusive1 button {
-       display: block;
-       margin: auto;
-    }
-    .secondary,.f3{
-        border-bottom: 1px solid rgb(226, 226, 226);
-        padding-bottom: 20px;
-    }
-    .margin{
-        text-align: center;
-        padding-bottom: 25px;
-        padding-top: 10px;
-    }
-    .exclusive2{
-        text-align: center;
-    }
-    .gridelement{
-        width: 93%;
-        display: flex;
-        /* border: 1px solid red; */
-        margin: auto;
-        justify-content: space-between;
-        /* padding-bottom: 50px; */
-    }
-    .gridelement>div{
-        width: 23%;
-        text-align: center;
-    }
-    .gridelement>div img{
-        width: 100%;
-    }
-    .gridelement+button{
-        display: block;
-        margin: auto;
-    }
-    .gridparent{
-        padding-bottom: 50px;
-        border-bottom: 1px solid rgb(226, 226, 226);
-    }
-    .f1,.f2{
-        width: 80%;
-        margin: auto;
-        padding-top: 15px;
-    }
-    .h1{
-        font-weight: lighter;
-        font-size: 15px;
-        text-transform: uppercase;
-        text-align: center;
-    }
-    .p{
-        font-size: 12px;
-        line-height: 16px;
-        font-family: Arial,Helvetica,sans-serif;
-        text-align: left;
-    }
-    .f2{
-        display: flex;
-    }
-    .right{
-       text-align: justify;
-    }
-    .playstore{
-        margin: auto;
-        border-bottom: 1px solid rgb(226, 226, 226);
-        padding: 10px;
-    }
-    .playstore>div{
-        display: flex;
-        /* border:1px solid red; */
-        width: 20%;
-        margin: auto;
-        padding:10px;
-
-    }
-    .playstore>div>div{
-        width: 48%;
-        margin: auto;
-    }
-    .playstore>div img{
-        width: 100%;
-    }
-    .last-foot{
-        display: flex;
-    }
-</style>
 <body>
     <header>
         <div class="header-container">
@@ -297,7 +20,7 @@
             <div class="right-head">
                 <p class="wish">Welcome to Mytheresa</p>
                 <a href="#" class="wish">My account</a>
-                <a href="#" class="wish" >My wishlist</span></a>
+                <a href="#" class="wish" >My wishlist</a><i class="fa-light fa-heart"></i>
                 <p class="wish">International | English</p>
             </div>
         </div>
@@ -503,18 +226,111 @@
         </div>
         <div class="last-foot">
             <div>
-                <h1 class="h1">SERVICE & SECURITY</h1>
+                <h1 class="h1 right">SERVICE & SECURITY</h1>
+                <ul class="tick">
+                    <li>
+                        Fast Delivery
+                    </li>
+                    <li>
+                        Delivery within 2 business days
+                    </li>
+                    <li>
+                        Free returns within 30 days
+                    </li>
+                    <li>
+                        Convinient return service
+                    </li>
+                    <li>
+                        Secure payment and data protection
+                    </li>
+                    <li>
+                        SSL encryption for secure transactions and personal data
+                    </li>
+                </ul>
             </div>
             <div>
-                <h1 class="h1">MYTHERESA</h1>
+                <h1 class="h1 right">MYTHERESA</h1>
+                <ul>
+                    <li>About us</li>
+                    <li>Trust and services</li>
+                    <li>Press</li>
+                    <li>Careers</li>
+                    <li>Investor Relations</li>
+                    <li>Affiliates</li>
+                    <li>Tax-Free Shopping</li>
+                </ul>
             </div>
             <div>
-                <h1 class="h1">CUSTOMER CARE</h1>
+                <h1 class="h1 right">CUSTOMER CARE</h1>
+                <ul>
+                    <li>Contact us</li>
+                    <li>Shipping information</li>
+                    <li>Secure payment</li>
+                    <li>Exchanges</li>
+                    <li>Returns</li>
+                    <li>After sale service</li>
+                    <li>Gift card</li>
+                </ul>
             </div>
             <div>
-                <h1 class="h1">GET TREND UPDATES, STYLE TIPS AND MORE</h1>
+                <h1 class="h1 right">GET TREND UPDATES, STYLE TIPS AND MORE</h1>
+                <ul>
+                    <li>
+                        <input type="text"> 
+                        <button>Signup</button>
+                    </li>
+                    <li>
+                        Wishlist
+                    </li>
+                    <li>
+                        Recieve personal notifications
+                    </li>
+                    <li>
+                        Follow us on
+                    </li>
+                    <li>
+
+                    </li>
+                </ul>
             </div>
         </div>
+       <div class="pm">
+        <div style="display: flex;">
+            <div>
+                <p class="sans">payment method:</p>
+            </div>
+           <img style="width: 350px; padding-left: 5px;" src="./Data for TB/payment images.jpg" alt="">
+         </div>
+         <div style="display: flex;">
+             <div>
+                <p class="sans">
+                    delivered by:
+                </p>
+             </div>
+             <img style="width: 100px; padding-left: 5px;" src="./Data for TB/DHL.svg" alt="">
+         </div>
+       </div>
+       <div style="display: flex;justify-content: space-between;padding: 5px 25px;" >
+            <div><p class="sans">copyright © 2006-2022 mytheresa.com</p></div>
+            <div style="display: flex;"><p class="sans margin1">terms of use</p>
+ 
+                <p class="sans margin1">privacy policy</p>
+                 
+                <p class="sans margin1">imprint</p></div>
+       </div>
     </footer>
 </body>
+<script>
+    let nav=document.querySelector(".nav")
+    window.onscroll = function(){
+        if(window.pageYOffset >= nav.offsetTop){
+            nav.classList.add("sticky");
+            // document.querySelector("header").style.display="none";
+        }
+        else{
+            nav.classList.remove("sticky");
+            // document.querySelector("header").style.overflow="hidden";
+        }
+    }
+</script>
 </html>
