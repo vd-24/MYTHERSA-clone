@@ -1,6 +1,15 @@
+.sticky{
+ background-color: #fffffff6;
+ position: fixed;
+ width: 100%;
+ top: 0;
+ /* left: 0; */
+ margin-top: -30px;
+}
 *{
     /* font-family: Arial,Helvetica,sans-serif; */
     font-family:Futura-Medium,Century Gothic,Gill Sans,Helvetica,Arial,sans-serif;
+    letter-spacing: .8px;
 }
 .header-container{
     margin-top: 10px;
@@ -14,16 +23,20 @@
     /* border: 1px solid red; */
     display: flex;
     align-items: center;
-    width: 43%;
+    width: 40%;
     font-weight: bold;
     font-size: 11px;
     text-decoration: none;
     color: #757575;
     font-family: Arial,Helvetica,sans-serif;
 }
-.right-head a{
+.right-head a,.right-head p{
     text-decoration: none;
+    font-family: Arial,Helvetica,sans-serif;
     color:rgb(110, 110, 110); 
+    font-weight: 700;
+    font-size: 11px;
+   
 }
 .left-head{
     width: 21%;
@@ -74,9 +87,10 @@
     display: flex;
     font-size: 13px;
     /* border: 1px solid red; */
-    padding: 48px 25px 0px 25px;
+    padding: 5px 25px 0px 25px;
+    margin-top: 40px;
    justify-content: space-between;
-   align-content: center;
+   /* align-content: center; */
 }
 .options{
     display: flex;
@@ -85,7 +99,8 @@
 .options a{
     text-decoration: none;
     color: #757575;
-    margin-left: 20px;
+    margin-left: 15px;
+    /* margin-bottom: -5px; */
 }
 .wish:hover{
     color:black
@@ -100,13 +115,25 @@ body{
     margin: 0px;
     padding: 0px;
 }
-.icon{
-    border: 1px solid  #cfcfcf; 
-    width: 230px;
+.search,.icon{
+    display: block;
     padding: 5px;
 }
+.icon{
+    border: 0px;
+    width: 230px;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+}
+.icon:focus{
+    outline: none;
+}
 .input{
-    padding-right: 25px;
+    display: flex;
+    border: 1px solid  #cfcfcf; 
+    width: 230px;
+    justify-content: space-between;
+    margin-right: 20px;
 }
 .sale{
     text-align: center;
@@ -278,14 +305,6 @@ body{
     margin: auto;
     border-bottom: 1px solid rgb(226, 226, 226);
 }
- .sticky{
-  background-color: #fffffff6;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  /* left: 0; */
-  margin-top: -30px;
-}
 .block{
     display: inline;
     padding-bottom: 5px;
@@ -298,9 +317,6 @@ body{
     color: #757575;
     padding-left: 25px;
     
-}
-#payment-images .text{
-  border: 1px solid red;
 }
 .pm{
     display: flex; 
@@ -322,4 +338,8 @@ body{
 .last-foot ul li{
   font-family: sans-serif;
   text-align: left;
+}
+.nav{
+ width: 100%;
+ /* border:1px solid red; */
 }

@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="wishlist.css">
     <script src="https://kit.fontawesome.com/d4cc0930cc.js" crossorigin="anonymous"></script>
-    <title>Women’s Luxury Fashion &amp; Designer Shopping | Mytheresa</title>
-    <link rel="stylesheet" href="style.css">
+    <title>My Wishlist | My Theresa</title>
 </head>
 <body>
     <header>
@@ -29,7 +29,7 @@
                 <a href=""><img src="./Data for TB/logo.png" alt=""></a>
             </div>
             <div class="bag">
-                <a href="bag.html">SHOPPING BAG</a>
+                <a href="#">SHOPPING BAG</a>
                 <img src="./Data for TB/bag.svg" alt="">
             </div>
         </div>
@@ -60,111 +60,10 @@
             </p>
         </div>
     </section> 
-    <img class="banner1" src="./Data for TB/banner 1.webp" alt="">
-    <div class="banner1 banner2">
-        <img src="./Data for TB/banner 2.0.jpg" alt="">
-    </div>
-    <div class="banner1-div">
-        <p>YOUR NEW OUTLOOK</p>
-        <h1>Cruise 2023</h1>    
-        <div class="button-wrapper">
-        <button class="btn1"><a href="#">SHOP NOW </a></button>
-    </div>
-    </div>
-    <div class="section">
-        <h4 class="h">DON'T MISS OUT</h4>
-        <h1 class="h">New Arrivals</h1>
-        <h5 class="h h1">Christian Louboutin, Paris Texas, A.P.C., Victoria Beckham...</h5>
-        <button class="btn1 darkbtn"><a href="#">SHOP NOW </a></button>
-    </div>
-    <div class="section2">
-        <div>
-            <h4 class="h h1">PARIS TEXAS X MYTHERESA</h4>
-            <h1 class="h">The Exclusive Capslie Collection</h1>
+        <p style="text-align: center;"><span id="item"></span>item(s)</p>
+        <div id="div">
+    
         </div>
-        <div>
-            <h4 class="h h1">SEASONAL FLATS</h4>
-            <h1 class="h">Because cozy feet are happy feet</h1>
-        </div>
-    </div>
-    <div class="exclusive1">
-        <div>
-            <!-- image div -->
-            <img src="./Data for TB/section1 img1.jpg" alt="">
-            <button class="btn1 darkbtn"><a href="#">SHOP NOW </a></button>
-        </div>
-        <div>
-            <div class="secondary">
-                <img src="./Data for TB/section1 img 2.jpg" alt="">
-                <button class="btn1 darkbtn"><a href="#">SHOP NOW </a></button>
-            </div>
-            <div class="margin">
-                <h4 class="h h1">CONTEMPORARY JEWELRY</h4>
-                <h1 class="h">Craft and style rolled into one</h1>
-            </div>
-            <div>
-                <img src="./Data for TB/section1 img 3.jpg" alt="">
-                <button class="btn1 darkbtn"><a href="#">SHOP NOW </a></button>
-            </div>
-        </div>
-    </div>
-    <div class="section2">
-        <div>
-            <h4 class="h h1">WHAT'S THE ANGLE?</h4>
-            <h1 class="h">Sharpen your edit of winter-sun shades</h1>
-        </div>
-        <div>
-            <h4 class="h h1">GLAMOROUS GOWNS</h4>
-            <h1 class="h">Designed to make a statement</h1>
-        </div>
-    </div>
-    <div class="exclusive1">
-       
-        <div>
-            <div class="secondary">
-                <img src="./Data for TB/section2 img 1.jpg" alt="">
-                <button class="btn1 darkbtn"><a href="#">SHOP NOW </a></button>
-            </div>
-            <div class="margin">
-                <h4 class="h h1">YOUR NEW FLEX</h4>
-                <h1 class="h">The Antigona Stretch Bag from Givenchy</h1>
-            </div>
-            <div>
-                <img src="./Data for TB/section 2 img 2.jpg" alt="">
-                <button class="btn1 darkbtn"><a href="#">SHOP NOW </a></button>
-            </div>
-        </div>
-        <div>
-            <!-- image div -->
-            <img src="./Data for TB/section 2 img 3.jpg" alt="">
-            <button class="btn1 darkbtn"><a href="#">SHOP NOW </a></button>
-        </div>
-    </div>
-    <div class="exclusive2">
-        <h4 class="h h1">PREP SCHOOL</h4>
-        <h1 class="h">Where polished is the guiding principle</h1>
-    </div>
-    <div class="gridparent">
-        <div class="gridelement">
-            <div>
-                <img src="./Data for TB/section3 img 1.jpg" alt="">
-                <h4 class="h h1">Self-Potrait</h4>
-            </div>
-            <div>
-                <img src="./Data for TB/section3 img2.jpg" alt="">
-                <h4 class="h h1">Gucci</h4>
-            </div>
-            <div>
-                <img src="./Data for TB/section3 img3.jpg" alt="">
-                <h4 class="h h1">Valentino</h4>
-            </div>
-            <div>
-                <img src="./Data for TB/section3 img4.webp" alt="">
-                <h4 class="h h1">Oscar de la Renta</h4>
-            </div>
-        </div>
-        <button class="btn1 darkbtn"><a href="#">SHOP NOW </a></button>
-    </div>
     <footer>
         <div class="footer-passage">
             <div class="f1">
@@ -323,6 +222,76 @@
     </footer>
 </body>
 <script>
+    let wish=JSON.parse(localStorage.getItem("wishlist"))||[];
+    display(wish)
+    console.log(wish)
+    function display(arr){
+        document.getElementById("div").innerHTML=null;
+       let item=document.getElementById("item")
+       item.innerText=arr.length+" "
+        arr.forEach((element,index) => {
+            // main div
+            let div=document.createElement("div")
+            div.setAttribute("class","main-div")  
+          
+            
+            let wishbtn=document.createElement("button");
+            wishbtn.addEventListener("click",()=>{
+                let bag=JSON.parse(localStorage.getItem("cart"))||[];
+                let flag=true;
+                bag.forEach((ele)=>{
+                    if(ele.id===element.id){
+                        flag=false;
+                    }
+                })
+                if(flag==false){
+                    alert("item already present in the bag")
+                }else{
+                    bag.push(element);
+                    localStorage.setItem("cart",JSON.stringify(bag));
+                    arr.splice(index,1);
+                    localStorage.setItem("wishlist",JSON.stringify(arr))
+                    display(arr);
+                    alert("item added to the bag")
+                }
+            })
+            wishbtn.innerText="Move To Bag"
+            wishbtn.setAttribute("class","btn1 darkbtn")
+            let remove=document.createElement("button");
+            remove.innerText="Remove"
+            remove.setAttribute("class","btn1")
+            remove.setAttribute("class","remove");
+            remove.addEventListener("click",()=>{
+                arr.splice(index,1);
+                localStorage.setItem("wishlist",JSON.stringify(arr))
+                display(arr);
+            })
+            let image=document.createElement("img");
+            image.src=element.images
+            image.style.width="95%"
+
+            let name=document.createElement("p");
+            name.innerText=element.name;
+            name.setAttribute("class","name")
+
+            let desc=document.createElement("p");
+            desc.innerText=element.description;
+            desc.setAttribute("class","desc")
+            desc.style.color="#757575;"
+            desc.style.fontFamily="Arial,Helvetica,sans-serif;"
+
+            let price=document.createElement("h4")
+            price.innerText="€ "+element.price
+            price.setAttribute("class","price")
+
+            element.quantity=1;
+
+            div.append(image,name,desc,price,wishbtn,remove)
+            document.getElementById("div").append(div)
+          
+        });
+
+    }
     let nav=document.querySelector(".nav")
     window.onscroll = function(){
         if(window.pageYOffset >= nav.offsetTop+31){
@@ -344,6 +313,6 @@
         i=0;
       }
     },3000)
-
+   </script
 </script>
 </html>

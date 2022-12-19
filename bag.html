@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bag.css">
+    <script src="https://kit.fontawesome.com/d4cc0930cc.js" crossorigin="anonymous"></script>
+    <title>Your Shopping Bag</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="left-head">
+                <a href="#">WOMEN</a>
+                <a href="#">MEN</a>
+                <a href="#">KIDS</a>
+                <a href="#">LIFE</a>
+            </div>
+            <div class="right-head">
+                <p class="wish">Welcome to Mytheresa</p>
+                <a href="signup.html" class="wish">My account</a>
+                <a href="wishlist.html" class="wish" >My wishlist</a><i class="fa-light fa-heart"></i>
+                <p class="wish">International | English</p>
+            </div>
+        </div>
+        <div class="parent">
+            <div class="logo">
+                <a href=""><img src="./Data for TB/logo.png" alt=""></a>
+            </div>
+        </div>
+    </header>
+    <section class="nav">
+        <nav class="navbar">
+            <div class="options">
+                <a href="newarrivals.html">NEW ARRIVALS</a>
+                <a href="#">DESGNERS</a>
+                <a href="#">CLOTHING</a>
+                <a href="#">SHOES</a>
+                <a href="#">BAGS</a>
+                <a href="#">ACCESSORIES</a>
+                <a href="#">JEWELARY</a>
+                <a href="#">FESTIVE SEASON</a>
+                <a href="#" class="sale">SALE</a>
+            </div>
+            <div >
+                <div class="input">
+                    <input type="text" class="icon" placeholder="Search for..."><i class="fa-solid fa-magnifying-glass search"></i>
+                </div>
+            </div>
+        </nav>
+        <hr>
+        <div>
+            <p class="sale" id="sell">
+                2 days left: Extra 10% off selected sale
+            </p>
+        </div>
+    </section>
+    <div id="xyz">
+
+        <div id="upper">
+            <div id="text">
+                <p>YOUR SHOPPING BAG</p>
+            </div>
+        </div>
+        <div id="checkout" >
+            <button class="btn1 darkbtn">Proceed To Checkout</button>
+        </div>
+        <div id="price">
+            <p>Price</p>
+            <p>Quantity</p>
+            <p>Subtotal</p>
+        </div>
+        <hr>
+        <div id="body">
+    
+        </div> 
+    </div>
+</body>
+<script>
+    let body=document.getElementById("body");
+    let bag=JSON.parse(localStorage.getItem("cart"))||[]; 
+    let xyz=document.getElementById("xyz");  
+    display(bag)
+    function display(arr){
+        body.innerHTML=null
+        if(arr.length===0){
+            xyz.innerHTML=null;
+            let empty=document.createElement("p");
+            empty.setAttribute("class","empty")
+            empty.innerText="YOUR SHOPPING BAG IS EMPTY"
+            xyz.append(empty)
+        }
+        else{
+            arr.forEach((element,index) => {
+                
+                let div=document.createElement("div");
+                div.setAttribute("class","card");
+                let img_div=document.createElement("div");
+                img_div.setAttribute("class","img-div")
+                let img=document.createElement("img");
+                img.src=element.images
+                img.style.width="35%"
+                let desc=document.createElement("div");
+                desc.setAttribute("class","desc");
+                let name=document.createElement("p");
+                name.setAttribute("class","namee")
+                name.innerText=element.name
+                let dp=document.createElement("p");
+                dp.innerText=element.description
+                let price=document.createElement("p");
+                price.setAttribute("class","pricee")
+                price.innerText="€ "+element.price;
+                let remove=document.createElement("button");
+                remove.innerText="Remove"
+                remove.setAttribute("class","btn2")
+                remove.addEventListener("click",()=>{
+                    arr.splice(index,1);
+                    localStorage.setItem("cart",JSON.stringify(arr));
+                    display(arr)
+                })
+                let price_div=document.createElement("div")
+                let quantity=document.createElement("p");
+                p.innerText=element.quantity;
+                price_div.append(price,p)
+                desc.append(name,dp,price,remove)
+                img_div.append(img,desc);
+                div.append(img_div,desc)
+                body.append(div)
+            });
+
+        }
+    }
+</script>
+</html>
