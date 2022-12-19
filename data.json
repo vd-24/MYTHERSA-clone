@@ -1,6 +1,10 @@
-[{"images":"./products/P00585355.webp",
-"name":"RAINBOW K","description":"Ergonomic Concrete Bacon",
-"price":"771.00","category":"Grocery","id":"1"},
+[
+{"images":"./products/P00585355.webp",
+"name":"RAINBOW K",
+"description":"Ergonomic Concrete Bacon",
+"price":"771.00",
+"category":"Grocery",
+"id":"1"},
 
 
 {"images":"./products/P00591866.webp","name":"VICTORIA BECKHAM","description":"Intelligent Plastic Mouse","price":"383.00","category":"Computers","id":"2"},

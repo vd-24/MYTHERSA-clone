@@ -360,6 +360,7 @@ body {
     margin-top: 200px;
     border: 1px solid black;
     display: none;
+    transition: ease-out;
 }
 .main-div:hover .cart{
     display: block;

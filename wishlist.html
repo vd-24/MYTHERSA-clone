@@ -26,10 +26,10 @@
         </div>
         <div class="parent">
             <div class="logo">
-                <a href=""><img src="./Data for TB/logo.png" alt=""></a>
+                <a href="index.html"><img src="./Data for TB/logo.png" alt=""></a>
             </div>
             <div class="bag">
-                <a href="#">SHOPPING BAG</a>
+                <a href="bag.html">SHOPPING BAG</a>
                 <img src="./Data for TB/bag.svg" alt="">
             </div>
         </div>
@@ -60,60 +60,14 @@
             </p>
         </div>
     </section> 
-        <p style="text-align: center;"><span id="item"></span>item(s)</p>
+        <p id="hhh"style="text-align: center;"><span id="item"></span>item(s)</p>
         <div id="div">
     
         </div>
+        <hr>
     <footer>
-        <div class="footer-passage">
-            <div class="f1">
-                <h1 class="h1">MYTHERESA - Women's luxury and designer fashion</h1>
-                <p class="p">
-                    Mytheresa is the most-trusted source for finding the finest selection of luxurious womenswear.
-                     Our expert buying team travels the globe with a simple mission: to bring international fashion's 
-                     finest directly to your doorstep. With our runway-fresh new arrivals every week, an easy-to-navigate
-                      platform and a mobile app to shop on-the-go, we ensure a boutique-like feeling for a unique shopping
-                       experience.
-                </p>
-            </div>
-            <div class="f2">
-                <div>
-                    <ul>
-                        <h1 class="h1 right">A LUXURY SHOPPING EXPERIENCE</h1>
-                        <li class="p">The finest edit of more than 200 international luxury brands</li>
-                        <li class="p">900 new arrivals each week directly from the runway</li>
-                        <li class="p">Well-curated selection of items for a boutique-like shopping experience</li>
-                        <li class="p">Exclusive designer collaborations and capslie collections that you won't find anywhere else</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <h1 class="h1 right">SERVICE AND QUALITY</h1>
-                        <li class="p">Authentic products guaranteed</li>
-                        <li class="p">Fast, reliable delivery within 3 business days</li>
-                        <li class="p">Free returns and exchanges within 30 days</li>
-                        <li class="p">Exceptional customer service available 24 hours a day, 7 days a week in 13 different languages</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="f1 f3">
-                <p class="p">Whether you are looking for the latest Bottega Veneta pouch for everyday wear, Jimmy Choo heels for an upcoming 
-                    wedding, or a Burberry scarf to gift a friend, our edit comprises the key pieces that you need for an elegant season ahead.
-                    With our assortment of timeless items and exclusive capsule collections, which includes everything from the understated luxury
-                    of Loro Piana and avant-garde appeal of Maison Margiela, to Saint Laurent bags and time-honored Gucci loafers; you are certain
-                    to find everything you want to build your dream closet.</p>
-                
-                <p class="p">
-                    Get inspired by our coveted edit, which makes occasion dressing easy by breaking down our buy into easy-to-shop categories
-                    such as fashion sneakers or exquisite gowns. Delve into our exclusive selection of designer must-haves. Our exceptional
-                    customer service team is here to help you through every step of the order process, and beyond, to make sure you start 
-                    every day dressed to conquer.
-                </p>
-                <p class="p">
-                    Shop with us and discover why Mytheresa is your final destination for online shopping for women.
-                </p>
-            </div>
-        </div>
+       
+
         <div class="playstore">
             <h1 class="h1">SHOP WHENEVER, WHEREVER WITH THE APP</h1>
             <div>
@@ -227,69 +181,88 @@
     console.log(wish)
     function display(arr){
         document.getElementById("div").innerHTML=null;
-       let item=document.getElementById("item")
-       item.innerText=arr.length+" "
-        arr.forEach((element,index) => {
-            // main div
-            let div=document.createElement("div")
-            div.setAttribute("class","main-div")  
-          
-            
-            let wishbtn=document.createElement("button");
-            wishbtn.addEventListener("click",()=>{
-                let bag=JSON.parse(localStorage.getItem("cart"))||[];
-                let flag=true;
-                bag.forEach((ele)=>{
-                    if(ele.id===element.id){
-                        flag=false;
-                    }
-                })
-                if(flag==false){
-                    alert("item already present in the bag")
-                }else{
-                    bag.push(element);
-                    localStorage.setItem("cart",JSON.stringify(bag));
-                    arr.splice(index,1);
-                    localStorage.setItem("wishlist",JSON.stringify(arr))
-                    display(arr);
-                    alert("item added to the bag")
-                }
+        if(arr.length===0){
+            document.getElementById("hhh").innerHTML=null;
+            let em=document.createElement("p")
+            em.innerText="THERE ARE NO PRODUCTS ON YOUR WISHLIST."
+            let checkk=document.createElement("p")
+            checkk.innerText="Check out our new arrivals and start adding to your wishlist now!"
+            let click=document.createElement("button")
+            click.setAttribute("class","btn1")
+            click.innerText="SHOP NEW ARRIVALS";
+            click.addEventListener("click",()=>{
+                window.location.href="newarrivals.html"
             })
-            wishbtn.innerText="Move To Bag"
-            wishbtn.setAttribute("class","btn1 darkbtn")
-            let remove=document.createElement("button");
-            remove.innerText="Remove"
-            remove.setAttribute("class","btn1")
-            remove.setAttribute("class","remove");
-            remove.addEventListener("click",()=>{
-                arr.splice(index,1);
-                localStorage.setItem("wishlist",JSON.stringify(arr))
-                display(arr);
-            })
-            let image=document.createElement("img");
-            image.src=element.images
-            image.style.width="95%"
+            document.getElementById("div").append(em,checkk,click) 
+            document.getElementById("div").setAttribute("id","bags")
 
-            let name=document.createElement("p");
-            name.innerText=element.name;
-            name.setAttribute("class","name")
+        }
+        else{
 
-            let desc=document.createElement("p");
-            desc.innerText=element.description;
-            desc.setAttribute("class","desc")
-            desc.style.color="#757575;"
-            desc.style.fontFamily="Arial,Helvetica,sans-serif;"
-
-            let price=document.createElement("h4")
-            price.innerText="€ "+element.price
-            price.setAttribute("class","price")
-
-            element.quantity=1;
-
-            div.append(image,name,desc,price,wishbtn,remove)
-            document.getElementById("div").append(div)
-          
-        });
+            let item=document.getElementById("item")
+            item.innerText=arr.length+" "
+             arr.forEach((element,index) => {
+                 // main div
+                 let div=document.createElement("div")
+                 div.setAttribute("class","main-div")  
+               
+                 
+                 let wishbtn=document.createElement("button");
+                 wishbtn.addEventListener("click",()=>{
+                     let bag=JSON.parse(localStorage.getItem("cart"))||[];
+                     let flag=true;
+                     bag.forEach((ele)=>{
+                         if(ele.id===element.id){
+                             flag=false;
+                         }
+                     })
+                     if(flag==false){
+                         alert("item already present in the bag")
+                     }else{
+                         bag.push(element);
+                         localStorage.setItem("cart",JSON.stringify(bag));
+                         arr.splice(index,1);
+                         localStorage.setItem("wishlist",JSON.stringify(arr))
+                         display(arr);
+                         alert("item added to the bag")
+                     }
+                 })
+                 wishbtn.innerText="Move To Bag"
+                 wishbtn.setAttribute("class","btn1 darkbtn")
+                 let remove=document.createElement("button");
+                 remove.innerText="Remove"
+                 remove.setAttribute("class","btn1")
+                 remove.setAttribute("class","remove");
+                 remove.addEventListener("click",()=>{
+                     arr.splice(index,1);
+                     localStorage.setItem("wishlist",JSON.stringify(arr))
+                     display(arr);
+                 })
+                 let image=document.createElement("img");
+                 image.src=element.images
+                 image.style.width="95%"
+     
+                 let name=document.createElement("p");
+                 name.innerText=element.name;
+                 name.setAttribute("class","name")
+     
+                 let desc=document.createElement("p");
+                 desc.innerText=element.description;
+                 desc.setAttribute("class","desc")
+                 desc.style.color="#757575;"
+                 desc.style.fontFamily="Arial,Helvetica,sans-serif;"
+     
+                 let price=document.createElement("h4")
+                 price.innerText="€ "+element.price
+                 price.setAttribute("class","price")
+     
+                 element.quantity=1;
+     
+                 div.append(image,name,desc,price,wishbtn,remove)
+                 document.getElementById("div").append(div)
+               
+             });
+        }
 
     }
     let nav=document.querySelector(".nav")

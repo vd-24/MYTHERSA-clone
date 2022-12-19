@@ -26,7 +26,7 @@
         </div>
         <div class="parent">
             <div class="logo">
-                <a href=""><img src="./Data for TB/logo.png" alt=""></a>
+                <a href="index.html"><img src="./Data for TB/logo.png" alt=""></a>
             </div>
         </div>
     </header>
@@ -64,7 +64,7 @@
             </div>
         </div>
         <div id="checkout" >
-            <button class="btn1 darkbtn">Proceed To Checkout</button>
+            <button onclick="order()" class="btn1 darkbtn">Proceed To Checkout</button>
         </div>
         <div id="price">
             <p>Price</p>
@@ -74,16 +74,29 @@
         <hr>
         <div id="body">
     
+        </div>
+        <div id="grandtotal">
+           
         </div> 
     </div>
 </body>
 <script>
+    function order(){
+        alert("Your Order Has Been Placed");
+        bag=null;
+        localStorage.setItem("cart",JSON.stringify(bag))
+        window.location.href="index.html";
+    }
     let body=document.getElementById("body");
     let bag=JSON.parse(localStorage.getItem("cart"))||[]; 
-    let xyz=document.getElementById("xyz");  
+    let xyz=document.getElementById("xyz"); 
+    let grand=document.getElementById("grandtotal"); 
     display(bag)
     function display(arr){
+       
         body.innerHTML=null
+        
+       
         if(arr.length===0){
             xyz.innerHTML=null;
             let empty=document.createElement("p");
@@ -93,7 +106,6 @@
         }
         else{
             arr.forEach((element,index) => {
-                
                 let div=document.createElement("div");
                 div.setAttribute("class","card");
                 let img_div=document.createElement("div");
@@ -120,15 +132,28 @@
                     display(arr)
                 })
                 let price_div=document.createElement("div")
-                let quantity=document.createElement("p");
-                p.innerText=element.quantity;
-                price_div.append(price,p)
-                desc.append(name,dp,price,remove)
+                price_div.setAttribute("class","price-div")
+                let quantity1=document.createElement("input");
+                quantity1.setAttribute("value","1")
+                quantity1.setAttribute("class","qtn")
+                let ok=document.createElement("button")
+                ok.innerText="Done"
+                let subtotal=document.createElement("p");
+                subtotal.innerText=element.price
+                ok.addEventListener("click",()=>{
+                    element.quantity=quantity1.value
+                    subtotal.innerText=(quantity1.value*element.price)
+                    
+                })
+                // console.log(subtotal.innerText);
+                console.log(element.price*element.quantity)
+                price_div.append(price,quantity1,ok,subtotal)
+                desc.append(name,dp,remove)
                 img_div.append(img,desc);
-                div.append(img_div,desc)
+                div.append(img_div,desc, price_div)
                 body.append(div)
             });
-
+           
         }
     }
 </script>
